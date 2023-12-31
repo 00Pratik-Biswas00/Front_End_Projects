@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cricket Game</title>
+    <link rel="stylesheet" href="cricket.css" />
+  </head>
+  <body>
+    <h1>Cricket game</h1>
+
+    <button class="play_button" onclick="click_bat()">
+      <img class="choose_image" src="Images/bat.png" alt="Bat" />
+    </button>
+    <button class="play_button" onclick="click_ball()">
+      <img class="choose_image" src="Images/ball.png" alt="Ball" />
+    </button>
+    <button class="play_button" onclick="click_wicket()">
+      <img class="choose_image" src="Images/stump.png" alt="Wicket" />
+    </button>
+
+    <h2 id="user-move"></h2>
+    <h2 id="computer-move"></h2>
+    <h2 id="result"></h2>
+    <h2 id="score">Your score will be displayed here!</h2>
+
+    <button class="reset_button" onclick="reset_score()">Reset</button>
+
+    <script src="cricket.js"></script>
+  </body>
+</html>
