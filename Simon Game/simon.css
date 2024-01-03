@@ -1,0 +1,31 @@
+body {
+  text-align: center;
+  background-color: darkslategray;
+
+}
+
+.myHeading {
+  color: rgb(238, 255, 0);
+  padding: 40px 0 20px 0;
+  font-size: 3rem;
+  font-family: cursive;
+}
+
+.btn {
+  height: 150px;
+  width: 150px;
+  margin: 40px;
+  cursor: pointer;
+  border: none;
+  border-radius: 15px;
+}
+
+.game_over {
+  color: red;
+  font-family: cursive;
+}
+
+.pressed {
+  box-shadow: 0 0 20px white;
+  background-color: grey;
+}
