@@ -28,7 +28,7 @@ export const formData = [
     error_message: "Username is required",
   },
   {
-    type: "email",
+    type: "text",
     name: "user_email",
     placeholder: "Your email",
     error_message: "Email is required",
@@ -59,7 +59,7 @@ export const formData = [
   },
   {
     type: "password",
-    name: "password",
+    name: "Password",
     placeholder: "Password",
     error_message: "Password is required",
   },
@@ -134,12 +134,46 @@ function Form() {
     }));
   };
 
+  const emailValidator =
+    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  const passwordValidator =
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d!@#$%^&*()_+]{8,}$/;
+
+  const adhaarCardNumber = /^\d{12}$/;
+  const panCardNumber = /^[A-Z]{3}[PCHF]\d{4}[A-Z]$/;
+
   const handleBlur = (e) => {
     const { name, value } = e.target;
     if (!value) {
       setErrors((prevErrors) => ({
         ...prevErrors,
         [name]: formData.find((field) => field.name === name).error_message,
+      }));
+    } else if (name === "Password" && !passwordValidator.test(value)) {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        [name]:
+          "Password must contain at least 8 characters, including one uppercase letter, one lowercase letter, and one number.",
+      }));
+    } else if (name === "user_email" && !emailValidator.test(value)) {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        [name]: "Please enter a valid email address.",
+      }));
+    } else if (name === "adhaar_no" && !adhaarCardNumber.test(value)) {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        [name]: "Please enter a valid Adhaar Number.",
+      }));
+    } else if (name === "pan_no" && !panCardNumber.test(value)) {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        [name]: "Please enter a valid Pan Number.",
+      }));
+    } else {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        [name]: "",
       }));
     }
   };
