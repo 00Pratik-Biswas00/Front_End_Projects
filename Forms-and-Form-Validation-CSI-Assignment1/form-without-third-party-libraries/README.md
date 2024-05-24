@@ -1,6 +1,6 @@
 # Create a React form without using any third-party libraries
 
-As we are instructed not to use any third-party libraries, the extra dependency that I used is react-router-dom, and for styling I used tailwind CSS.
+As we are instructed not to use any third-party libraries, the extra dependency that I used is react-router-dom, and for styling, I used tailwind CSS.
 
 ## Demo video -> 
 
@@ -11,19 +11,29 @@ https://github.com/00Pratik-Biswas00/Front_End_Projects/assets/114896796/476f8c0
 
 #### Sections that can be improved further:
 
-1. For the Phone number part, you can use npm i react-phone-number-input to get the country codes.
-2. For the Country and city parts, you can use npm i country-state-city to get detailed names.
+1. For the Phone number part, you can use `npm i react-phone-number-input` to get the country codes.
+2. For the Country and city parts, you can use `npm i country-state-city` to get detailed names.
 
 
-# Getting Started with Create React App
+# Getting Started with Cloning the Repo
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1. Open your VS code. (Make sure git is installed)
+2. Go to the terminal.
+3. Paste the link -> gh repo clone 00Pratik-Biswas00/Front_End_Projects
+
+## Go the project directory 
+
+As multiple projects are there in this repo, you have to go to the main directory of that project. For that, in the terminal write ->
+
+### 1. `cd Forms-and-Form-Validation-CSI-Assignment1`
+
+### 2. `cd form-without-third-party-libraries`
 
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `npm start`
+### `npm run start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
@@ -31,57 +41,3 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
