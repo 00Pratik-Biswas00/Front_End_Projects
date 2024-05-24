@@ -1,3 +1,20 @@
+# Create a React form without using any third-party libraries
+
+As we are instructed not to use any third-party libraries, the extra dependency that I used is react-router-dom, and for styling I used tailwind CSS.
+
+## Demo video -> 
+
+
+
+https://github.com/00Pratik-Biswas00/Front_End_Projects/assets/114896796/476f8c0c-e7d0-4a59-85c8-1b2bcf7ff68e
+
+
+#### Sections that can be improved further:
+
+1. For the Phone number part, you can use npm i react-phone-number-input to get the country codes.
+2. For the Country and city parts, you can use npm i country-state-city to get detailed names.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
