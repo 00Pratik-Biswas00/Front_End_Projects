@@ -29,6 +29,29 @@ As multiple projects are there in this repo, you have to go to the main director
 
 ### 2. `cd form-without-third-party-libraries`
 
+## Now install tailwind css for React [https://tailwindcss.com/docs/guides/create-react-app]
+
+In the terminal paste this ->
+
+1. `npm install -D tailwindcss`
+2. `npx tailwindcss init`
+
+Then go to the tailwind.config.js file and make the changes ->
+
+```
+content: [
+    "./src/**/*.{js,jsx,ts,tsx}",
+  ],
+```
+
+Now go to the index.css file and update it with this ->
+
+```
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
 ## Available Scripts
 
 In the project directory, you can run:
