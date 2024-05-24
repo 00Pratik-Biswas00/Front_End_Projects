@@ -261,15 +261,29 @@ function Form() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // Re-check for errors before allowing the form submission
     const newErrors = {};
+
     formData.forEach((field) => {
-      if (!values[field.name]) {
+      const value = values[field.name];
+      if (!value) {
         newErrors[field.name] = field.error_message;
+      } else if (field.name === "Password" && !passwordValidator.test(value)) {
+        newErrors[field.name] =
+          "Password must contain at least 8 characters, including one uppercase letter, one lowercase letter, and one number.";
+      } else if (field.name === "Email id" && !emailValidator.test(value)) {
+        newErrors[field.name] = "Please enter a valid email address.";
+      } else if (field.name === "Aadhaar" && !aadhaarCardNumber.test(value)) {
+        newErrors[field.name] = "Please enter a valid Adhaar Number.";
+      } else if (field.name === "PAN" && !panCardNumber.test(value)) {
+        newErrors[field.name] = "Please enter a valid Pan Number.";
       }
     });
-    setErrors(newErrors);
-    if (Object.keys(newErrors).length === 0) {
-      console.log("Form data: ", values);
+
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+    } else {
       navigate("/details", { state: { values } });
     }
   };
