@@ -17,17 +17,39 @@ https://github.com/00Pratik-Biswas00/Front_End_Projects/assets/114896796/476f8c0
 
 ## Getting Started with Cloning the Repo
 
-1. Open your VS code. (Make sure git is installed)
-2. Go to the terminal.
-3. Paste the link -> gh repo clone 00Pratik-Biswas00/Front_End_Projects
+1. Download the zip file.
+1. Open it in your VS code. 
 
 ## Go the project directory 
 
-As multiple projects are there in this repo, you have to go to the main directory of that project. For that, in the terminal write ->
+As multiple projects are there in this repo, you have to go to the main directory of that project. (If two folders of the name Front_End_Projects-main are downloaded then first write in the terminal `cd Front_End_Projects-main` and go to the inner folder then  write ->
 
 ### 1. `cd Forms-and-Form-Validation-CSI-Assignment1`
 
 ### 2. `cd form-without-third-party-libraries`
+
+## In case tailwind css is not installed then install it for React [https://tailwindcss.com/docs/guides/create-react-app]
+
+In the terminal paste this ->
+
+1. `npm install -D tailwindcss`
+2. `npx tailwindcss init`
+
+Then go to the tailwind.config.js file and make the changes ->
+
+```
+content: [
+    "./src/**/*.{js,jsx,ts,tsx}",
+  ],
+```
+
+Now go to the index.css file and update it with this ->
+
+```
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
 
 ## Available Scripts
 
