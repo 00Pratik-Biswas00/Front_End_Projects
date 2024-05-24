@@ -9,13 +9,13 @@ As we are instructed not to use any third-party libraries, the extra dependency 
 https://github.com/00Pratik-Biswas00/Front_End_Projects/assets/114896796/476f8c0c-e7d0-4a59-85c8-1b2bcf7ff68e
 
 
-#### Sections that can be improved further:
+## Sections that can be improved further:
 
 1. For the Phone number part, you can use `npm i react-phone-number-input` to get the country codes.
 2. For the Country and city parts, you can use `npm i country-state-city` to get detailed names.
 
 
-# Getting Started with Cloning the Repo
+## Getting Started with Cloning the Repo
 
 1. Open your VS code. (Make sure git is installed)
 2. Go to the terminal.
