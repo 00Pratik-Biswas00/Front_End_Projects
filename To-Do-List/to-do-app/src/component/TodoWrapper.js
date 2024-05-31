@@ -6,13 +6,13 @@ import { EditTodoForm } from "./EditTodoForm";
 
 const TodoWrapper = () => {
   const [todos, setTodos] = useState(() => {
-    // Retrieve the todos from localStorage
     const savedTodos = localStorage.getItem("todos");
-    // If there are saved todos, parse them and return, otherwise return an empty array
     return savedTodos ? JSON.parse(savedTodos) : [];
   });
 
-  // Save todos to localStorage whenever they change
+  const [sortOption, setSortOption] = useState("dateAdded");
+  const [filterOption, setFilterOption] = useState("all");
+
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
@@ -20,7 +20,13 @@ const TodoWrapper = () => {
   const addTodo = (todo) => {
     setTodos([
       ...todos,
-      { id: uuidv4(), task: todo, completed: false, isEditing: false },
+      {
+        id: uuidv4(),
+        task: todo,
+        completed: false,
+        isEditing: false,
+        dateAdded: new Date(),
+      },
     ]);
   };
 
@@ -50,39 +56,102 @@ const TodoWrapper = () => {
     );
   };
 
+  const handleSortChange = (e) => {
+    setSortOption(e.target.value);
+  };
+
+  const handleFilterChange = (e) => {
+    setFilterOption(e.target.value);
+  };
+
+  const sortedTodos = [...todos].sort((a, b) => {
+    if (sortOption === "dateAdded") {
+      return new Date(b.dateAdded) - new Date(a.dateAdded);
+    }
+    if (sortOption === "alphabetically") {
+      return a.task.localeCompare(b.task);
+    }
+    return 0;
+  });
+
+  const filteredTodos = sortedTodos.filter((todo) => {
+    if (filterOption === "all") return true;
+    if (filterOption === "completed") return todo.completed;
+    if (filterOption === "incompleted") return !todo.completed;
+    return true;
+  });
+
   return (
-    <div className="flex flex-col xl:flex-row items-center justify-center  bg-[#0C0C0C] md:h-screen py-3">
-      <div className=" w-[15rem] md:w-[25rem] xl:w-[32rem]  flex flex-col xl:flex-row items-center justify-center">
-        <div className="flex flex-col items-center xl:items-start justify-center">
-          <h3 className="text-xl md:text-2xl uppercase font-medium mb-2 tracking-wide text-[#00ffff]">
+    <div className="flex flex-col xl:flex-row items-center xl:items-start justify-center bg-[#0C0C0C] py-3 px-5 md:px-0 gap-x-12">
+      <div className="w-[20rem] md:w-[35rem] xl:w-[35rem] flex flex-col xl:flex-row items-center justify-center mt-10 xl:mt-20">
+        <div className="flex flex-col items-center md:items-start justify-center gap-y-3">
+          <h3 className="text-xl md:3xl xl:text-2xl uppercase font-medium  tracking-wide text-[#00ffff]">
             CSI Assignment 2
           </h3>
-          <h4
-            className="text-[30px] lg:text-[60px] font-bold leading-none mb-12
-              text-center xl:text-left text-[#fff]"
-          >
+          <h4 className="text-[30px] md:text-[40px] lg:text-[60px] font-bold leading-none text-center md:text-left text-[#fff]">
             Create a dynamic
             <br /> To-do list app!
           </h4>
+          <div className="text-white flex flex-col items-center md:items-start   ">
+            <li>You can add tasks</li>
+            <li>Completion marking button is available</li>
+            <li>
+              Task input is mandatory to add tasks, you can't add blank tasks
+            </li>
+            <li>Yours tasks will be saved in the local storage</li>
+            <li>You can sort your tasks by date addition and alphabetically</li>
+            <li>
+              You can filter your tasks and see your all, completed, and
+              incompleted tasks
+            </li>
+          </div>
         </div>
       </div>
-      <div className="TodoWrapper">
-        <h1>Get Things Done !</h1>
+      <div className=" bg-[#1A1A40] mt-10 xl:mt-20 p-8 rounded-md ">
+        <h1 className="text-white font-extrabold text-4xl">
+          Complete Your Tasks!
+        </h1>
         <TodoForm addTodo={addTodo} />
-        {/* display todos */}
-        {todos.map((todo) =>
-          todo.isEditing ? (
-            <EditTodoForm key={todo.id} editTodo={editTask} task={todo} />
-          ) : (
-            <Todo
-              key={todo.id}
-              task={todo}
-              deleteTodo={deleteTodo}
-              editTodo={editTodo}
-              toggleComplete={toggleComplete}
-            />
-          )
-        )}
+        <div className="flex justify-between mb-4 gap-x-3">
+          <div>
+            <label className="mr-2 text-white font-bold">Sort by:</label>
+            <select
+              value={sortOption}
+              onChange={handleSortChange}
+              className="p-2 bg-gray-700 text-white "
+            >
+              <option value="dateAdded">Date Added</option>
+              <option value="alphabetically">Alphabetically</option>
+            </select>
+          </div>
+          <div>
+            <label className="mr-2 text-white font-bold">Filter:</label>
+            <select
+              value={filterOption}
+              onChange={handleFilterChange}
+              className="p-2 bg-gray-700 text-white"
+            >
+              <option value="all">All</option>
+              <option value="completed">Completed</option>
+              <option value="incompleted">Incompleted</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          {filteredTodos.map((todo) =>
+            todo.isEditing ? (
+              <EditTodoForm key={todo.id} editTodo={editTask} task={todo} />
+            ) : (
+              <Todo
+                key={todo.id}
+                task={todo}
+                deleteTodo={deleteTodo}
+                editTodo={editTodo}
+                toggleComplete={toggleComplete}
+              />
+            )
+          )}
+        </div>
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -76,6 +76,14 @@
 }
 
 .Todo {
+  max-width: 1000px;
+}
+
+p {
+  word-break: break-word;
+}
+
+.Todo {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -96,7 +104,7 @@
 }
 
 .completed {
-  color: #c5aeff;
+  color: #2bff00;
   text-decoration: line-through;
   cursor: pointer;
 }
@@ -104,4 +112,4 @@
 .edit-icon,
 .delete-icon {
   cursor: pointer;
-}
+} */
