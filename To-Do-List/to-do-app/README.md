@@ -1,12 +1,8 @@
-# Create a React form without using any third-party libraries
+# Create a To-Do list app in React
 
-As we are instructed not to use any third-party libraries, the extra dependency that I used is react-router-dom, and for styling, I used tailwind CSS.
+We were instructed to develop a React To-Do List component allowing task addition, removal, and completion marking. Validate task input, display tasks dynamically, and offer optional sorting, filtering, and local storage integration. For styling, I used tailwind CSS.
 
 ## Demo video -> 
-
-
-
-https://github.com/00Pratik-Biswas00/Front_End_Projects/assets/114896796/476f8c0c-e7d0-4a59-85c8-1b2bcf7ff68e
 
 
 ## Getting Started with Cloning the Repo
