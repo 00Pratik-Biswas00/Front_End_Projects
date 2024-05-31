@@ -13,7 +13,7 @@ https://github.com/00Pratik-Biswas00/Front_End_Projects/assets/114896796/9eeaef6
 ## Getting Started with Cloning the Repo
 
 1. Download the zip file.
-1. Open it in your VS code. 
+1. Open it in your VS code.  
 
 ## Go the project directory 
 
