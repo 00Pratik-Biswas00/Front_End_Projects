@@ -20,12 +20,12 @@ export const TodoForm = ({ addTodo }) => {
         required
         value={value}
         onChange={(e) => setValue(e.target.value)}
-        className="outline-none bg-transparent border border-[#8758ff] py-2 px-4 my-4 w-[200px] md:w-[550px] text-white placeholder:text-[#ffffff4d] "
+        className="outline-none bg-transparent border border-[#344C64] py-2 px-4 my-4 w-[190px] md:w-[550px] text-white placeholder:text-[#e1f8ff89] "
         placeholder="What is the task today?"
       />
       <button
         type="submit"
-        className=" bg-[#8758ff] text-white border-none py-2 md:p-2 cursor-pointer"
+        className=" bg-[#344C64] text-white border-none p-2 md:p-2 cursor-pointer"
       >
         Add Task
       </button>

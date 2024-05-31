@@ -1,4 +1,3 @@
-import "./App.css";
 import React from "react";
 import TodoWrapper from "./component/TodoWrapper";
 function App() {

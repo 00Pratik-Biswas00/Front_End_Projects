@@ -85,10 +85,10 @@ const TodoWrapper = () => {
     <div className="flex flex-col xl:flex-row items-center xl:items-start justify-center bg-[#0C0C0C] py-3 px-5 md:px-0 gap-x-12">
       <div className="w-[20rem] md:w-[35rem] xl:w-[35rem] flex flex-col xl:flex-row items-center justify-center mt-10 xl:mt-20">
         <div className="flex flex-col items-center md:items-start justify-center gap-y-3">
-          <h3 className="text-xl md:3xl xl:text-2xl uppercase font-medium  tracking-wide text-[#00ffff]">
+          <h3 className="text-xl md:3xl xl:text-2xl uppercase font-medium  tracking-wide text-[#577B8D]">
             CSI Assignment 2
           </h3>
-          <h4 className="text-[30px] md:text-[40px] lg:text-[60px] font-bold leading-none text-center md:text-left text-[#fff]">
+          <h4 className="text-[30px] md:text-[40px] lg:text-[60px] font-bold leading-none text-center md:text-left text-white">
             Create a dynamic
             <br /> To-do list app!
           </h4>
@@ -107,7 +107,7 @@ const TodoWrapper = () => {
           </div>
         </div>
       </div>
-      <div className=" bg-[#1A1A40] mt-10 xl:mt-20 p-8 rounded-md ">
+      <div className=" bg-[#577B8D] mt-10 xl:mt-20 p-8 rounded-md ">
         <h1 className="text-white font-extrabold text-4xl">
           Complete Your Tasks!
         </h1>
@@ -118,7 +118,7 @@ const TodoWrapper = () => {
             <select
               value={sortOption}
               onChange={handleSortChange}
-              className="p-2 bg-gray-700 text-white "
+              className="p-2 bg-[#577B8D] border rounded border-[#344C64] text-white "
             >
               <option value="dateAdded">Date Added</option>
               <option value="alphabetically">Alphabetically</option>
@@ -129,7 +129,7 @@ const TodoWrapper = () => {
             <select
               value={filterOption}
               onChange={handleFilterChange}
-              className="p-2 bg-gray-700 text-white"
+              className="p-2 bg-[#577B8D] border rounded border-[#344C64] text-white"
             >
               <option value="all">All</option>
               <option value="completed">Completed</option>
