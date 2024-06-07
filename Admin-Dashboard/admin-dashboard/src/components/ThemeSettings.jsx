@@ -39,7 +39,7 @@ const ThemeSettings = () => {
             />
             {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
             <label htmlFor="light" className="ml-2 text-md cursor-pointer">
-              Lighttttt
+              Light
             </label>
           </div>
           <div className="mt-2">
