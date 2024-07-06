@@ -1,4 +1,4 @@
-# React Admin Dashboard using Syncfusion
+# React Spotify clone
 
 Celebal Week 5 Assignment
 
